@@ -3,7 +3,7 @@ import { Job } from 'bull';
 import { Injectable } from '@nestjs/common';
 import { SharedService } from '../shared/shared.service';
 import { JOB_NAMES, QueueNames } from '../helpers/constants';
-import { FirebaseService } from '../firebase/firebase.service';
+import { FirebaseService } from '../moduels/firebase/firebase.service';
 
 @Processor(QueueNames.NOTIFICATIONS_QUEUE)
 @Injectable()

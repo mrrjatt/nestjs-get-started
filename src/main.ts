@@ -17,10 +17,10 @@ async function bootstrap() {
   app.useGlobalInterceptors(new ServerErrorInterceptor());
   const config = new DocumentBuilder()
     .addBearerAuth()
-    .setTitle('Yoked')
-    .setDescription('Yoked Api Documentation')
-    .setVersion('1.0')
-    .addTag('Yoked')
+    .setTitle('Aura Master Mind')
+    .setDescription('Aura Master Mind Api Documentation')
+    .setVersion('1.0.0')
+    .addTag('Aura Master Mind')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs', app, document);

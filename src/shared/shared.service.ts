@@ -1,6 +1,5 @@
 import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
-import { User } from '../models/user.model';
 import { JwtPayload } from './interface/jwt-payload.interface';
 import { JwtService } from '@nestjs/jwt';
 import { Request } from 'express';
@@ -10,7 +9,8 @@ import { Queue } from 'bull';
 import { MailerService } from '@nestjs-modules/mailer';
 import { MailInput } from './dto/send-mail.dto';
 import { ConfigService } from '@nestjs/config';
-import { Notification } from '../models/notification.model';
+import { User } from '../moduels/users/models/user.model';
+import { Notification } from '../moduels/notifications/models/notification.model';
 
 @Injectable()
 export class SharedService {

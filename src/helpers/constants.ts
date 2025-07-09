@@ -13,11 +13,14 @@ export const EmailTemplates = {
   CONFIRM_ACCOUNT: 'confirm-email',
   RESET_PASSWORD: 'reset-password',
   CONTACT_US: 'contact-us-email',
+  INVITE_USER: 'invite-user',
 };
 
 export enum Role {
   User = 'user',
   Admin = 'admin',
+  Builder = 'builder',
+  Member = 'member',
 }
 export enum AUTH_PROVIDERS {
   GOOGLE = 'google',
@@ -59,4 +62,11 @@ export enum SearchType {
   USERS = 'users',
   POSTS = 'posts',
   REELS = 'reels',
+}
+
+export enum MapType {
+  PRE_REQUISITES = 'pre-requisites',
+  PRE_LAUNCH_LAB = 'pre-launch-lab',
+  LAUNCH_LAB = 'launch-lab',
+  POST_LAUNCH_LAB = 'post-launch-lab',
 }

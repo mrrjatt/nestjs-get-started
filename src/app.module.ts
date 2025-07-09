@@ -2,8 +2,8 @@ import { Module, OnModuleInit } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { AuthModule } from './auth/auth.module';
-import { UsersModule } from './users/users.module';
+import { AuthModule } from './moduels/auth/auth.module';
+import { UsersModule } from './moduels/users/users.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { SharedModule } from './shared/shared.module';
 import { BullModule } from '@nestjs/bull';
@@ -11,19 +11,20 @@ import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import { join } from 'path';
 import { GloablProcessor } from './processors/global.processor';
-import { User } from './models/user.model';
-import { Otp } from './models/otps.model';
 
 import { AdminSeederService } from './seeders/admin-seeder.service';
-import { SocialLogin } from './models/socialLogin.model';
-import { Device } from './models/devices.model';
-import { Notification } from './models/notification.model';
-import { NotificationsModule } from './notifications/notifications.module';
+import { User } from './moduels/users/models/user.model';
+import { Otp } from './moduels/users/models/otps.model';
+import { SocialLogin } from './moduels/users/models/socialLogin.model';
+import { Device } from './moduels/users/models/devices.model';
+import { PrivacyPolicy } from './moduels/miscellaneous/models/privacyPolicy.model';
+import { Notification } from './moduels/notifications/models/notification.model';
+import { NotificationsModule } from './moduels/notifications/notifications.module';
+import { FirebaseModule } from './moduels/firebase/firebase.module';
+import { MiscellaneousModule } from './moduels/miscellaneous/miscellaneous.module';
+import { DashboardModule } from './moduels/dashboard/dashboard.module';
 import { NotificationProcessor } from './processors/notification.processor';
-import { FirebaseModule } from './firebase/firebase.module';
-import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
-import { PrivacyPolicy } from './models/privacyPolicy.model';
-import { DashboardModule } from './dashboard/dashboard.module';
+
 
 @Module({
   imports: [
@@ -91,6 +92,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     FirebaseModule,
     MiscellaneousModule,
     DashboardModule,
+
   ],
   controllers: [AppController],
   providers: [AppService, GloablProcessor, NotificationProcessor, AdminSeederService],

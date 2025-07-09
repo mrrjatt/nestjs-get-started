@@ -5,14 +5,13 @@ import {
   ValidatorConstraintInterface,
   registerDecorator,
 } from 'class-validator';
-import { UsersService } from '../../users/users.service';
+import { UsersService } from '../../moduels/users/users.service';
 
 @ValidatorConstraint({ name: 'isEmailUserAlreadyExist', async: true })
 @Injectable()
 export class IsEmailUserAlreadyExistConstraint
-  implements ValidatorConstraintInterface
-{
-  constructor(protected readonly usersService: UsersService) {}
+  implements ValidatorConstraintInterface {
+  constructor(protected readonly usersService: UsersService) { }
 
   async validate(text: string) {
     const user = await this.usersService.findOne({

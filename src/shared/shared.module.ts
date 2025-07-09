@@ -3,7 +3,7 @@ import { SharedService } from './shared.service';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './jwt.stratigy';
-import { UsersModule } from '../users/users.module';
+import { UsersModule } from '../moduels/users/users.module';
 import { BullModule } from '@nestjs/bull';
 import { QueueNames } from '../helpers/constants';
 import { ConfigModule, ConfigService } from '@nestjs/config';
